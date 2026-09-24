@@ -1,0 +1,23 @@
+<!doctype html><html lang="vi"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chúc mừng Trung Thu - Mỹ Hậu</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;overflow:hidden;
+font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(circle at 50% 25%,#49307e,#120c2d 65%,#070513);color:white}
+.moon{position:fixed;width:180px;height:180px;border-radius:50%;background:#fff3b0;box-shadow:0 0 55px #ffe98a;top:10%;right:10%}
+.card{position:relative;z-index:2;text-align:center;padding:38px 28px;max-width:560px}
+h1{font-size:clamp(34px,8vw,64px);margin:0 0 14px;color:#ffeaa0;text-shadow:0 0 20px #ffb52e}
+h2{font-size:clamp(24px,5vw,40px);margin:0 0 18px}
+p{font-size:19px;line-height:1.6;margin:8px 0}
+.lantern{font-size:54px;animation:swing 2s ease-in-out infinite alternate}
+.star{position:fixed;color:#ffeaa0;animation:twinkle 1.6s infinite alternate}
+@keyframes swing{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+@keyframes twinkle{from{opacity:.25;transform:scale(.8)}to{opacity:1;transform:scale(1.15)}}
+</style>
+<div class="moon"></div><div class="card"><div class="lantern">🏮</div>
+<h1>🌕 Chúc Mừng Trung Thu 🌕</h1><h2>Gửi Mỹ Hậu 💛</h2>
+<p>Chúc Mỹ Hậu một mùa Trung Thu thật vui, thật ấm áp và ngập tràn những điều dễ thương.</p>
+<p>🌸 Mong mọi điều tốt đẹp sẽ đến, nụ cười luôn ở bên và đêm trăng này sẽ thật đáng nhớ! 🌸</p>
+<div style="font-size:34px;margin-top:20px">🥮 🏮 🥮</div></div>
+<script>
+for(let i=0;i<22;i++){let s=document.createElement('span');s.className='star';s.textContent='✦';s.style.left=Math.random()*100+'vw';s.style.top=Math.random()*100+'vh';s.style.animationDelay=Math.random()*2+'s';document.body.appendChild(s)}
+</script>

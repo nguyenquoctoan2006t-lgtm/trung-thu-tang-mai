@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gửi Mai 🌕</title>
+<style>
+*{box-sizing:border-box} html,body{margin:0;min-height:100%;font-family:Arial,sans-serif}
+body{
+  overflow:hidden; color:#fff; display:flex; align-items:center; justify-content:center;
+  background:radial-gradient(circle at 50% 35%,#334b91 0,#18275d 35%,#080d2b 78%,#03051a 100%);
+}
+.moon{
+  position:absolute;width:150px;height:150px;border-radius:50%;
+  background:#fff7c9;box-shadow:0 0 35px #fff3a8,0 0 90px #ffe99588;
+  top:9%;right:12%;
+}
+.moon:after{content:"";position:absolute;width:18px;height:18px;border-radius:50%;background:#eadf9e;left:35px;top:45px;box-shadow:45px 25px 0 4px #eee4a9,65px -18px 0 2px #e7dc9d,-10px 55px 0 3px #eee4a9}
+.stars{position:absolute;inset:0}
+.star{position:absolute;width:3px;height:3px;background:#fff;border-radius:50%;animation:twinkle 1.8s infinite alternate}
+@keyframes twinkle{to{opacity:.2;transform:scale(.55)}}
+.lantern{position:absolute;top:-90px;width:38px;height:52px;border-radius:45% 45% 35% 35%;background:#e94f65;box-shadow:0 0 18px #ff7585;animation:fall linear infinite}
+.lantern:before{content:"";position:absolute;left:16px;top:-10px;width:7px;height:12px;background:#ffd36a}
+.lantern:after{content:"";position:absolute;left:18px;bottom:-18px;width:3px;height:20px;background:#ffd36a}
+@keyframes fall{to{transform:translateY(115vh) rotate(8deg)}}
+.card{
+  position:relative;z-index:5;width:min(88%,560px);padding:42px 30px;text-align:center;
+  background:#ffffff16;border:1px solid #ffffff35;border-radius:28px;
+  backdrop-filter:blur(12px);box-shadow:0 20px 70px #0007;
+  animation:appear 1.5s ease;
+}
+@keyframes appear{from{opacity:0;transform:translateY(30px) scale(.95)}to{opacity:1;transform:none}}
+h1{font-size:clamp(40px,10vw,68px);margin:0 0 14px;color:#ffe9a3;text-shadow:0 0 20px #ffd75c}
+h2{margin:0 0 24px;font-size:25px;color:#fff}
+p{font-size:18px;line-height:1.8;margin:10px 0;color:#fff}
+.signature{margin-top:25px;color:#ffe9a3;font-weight:bold;font-size:20px}
+button{margin-top:25px;border:0;border-radius:999px;padding:12px 23px;background:#ffd86a;color:#34240b;font-weight:bold;cursor:pointer}
+#heart{position:fixed;inset:0;pointer-events:none;z-index:10}
+.spark{position:absolute;font-size:24px;animation:pop 1.2s ease-out forwards}
+@keyframes pop{from{opacity:1;transform:translate(0,0) scale(.5)}to{opacity:0;transform:translate(var(--x),var(--y)) scale(1.4)}}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<div class="moon"></div>
+<div id="lanterns"></div>
+<div class="card">
+  <div style="font-size:42px">🏮 🐰 🌕</div>
+  <h1>Chúc Mừng<br>Trung Thu</h1>
+  <h2>Gửi riêng đến Mai ✨</h2>
+  <p>Trung Thu này chúc Mai luôn vui vẻ, luôn xinh xắn và có thật nhiều điều may mắn.</p>
+  <p>Mong ánh trăng đêm nay mang đến cho Mai thật nhiều niềm vui, những điều bất ngờ đáng yêu và những khoảnh khắc thật đẹp. 🐰💫</p>
+  <p><b>Chúc Mai một mùa Trung Thu thật ấm áp và hạnh phúc nhé! ❤️</b></p>
+  <div class="signature">— Một lời chúc nhỏ dành cho Mai —</div>
+  <button onclick="celebrate()">✨ Nhấn vào đây ✨</button>
+</div>
+<div id="heart"></div>
+<script>
+for(let i=0;i<75;i++){
+  const s=document.createElement('span');s.className='star';
+  s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
+  s.style.animationDelay=Math.random()*2+'s';document.getElementById('stars').appendChild(s);
+}
+for(let i=0;i<12;i++){
+  const l=document.createElement('div');l.className='lantern';
+  l.style.left=Math.random()*100+'%';l.style.animationDuration=(8+Math.random()*9)+'s';
+  l.style.animationDelay=(-Math.random()*12)+'s';l.style.transform=`scale(${.65+Math.random()*.55})`;
+  document.getElementById('lanterns').appendChild(l);
+}
+function celebrate(){
+  const box=document.getElementById('heart');
+  for(let i=0;i<28;i++){
+    const s=document.createElement('span');s.className='spark';
+    s.textContent=['✨','💛','🌟','🏮','🐰'][Math.floor(Math.random()*5)];
+    s.style.left='50%';s.style.top='58%';
+    s.style.setProperty('--x',(Math.random()*420-210)+'px');
+    s.style.setProperty('--y',(Math.random()*420-210)+'px');
+    s.style.animationDelay=(Math.random()*.25)+'s';box.appendChild(s);
+    setTimeout(()=>s.remove(),1500);
+  }
+}
+</script>
+</body>
+</html>
